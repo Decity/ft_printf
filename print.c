@@ -5,7 +5,11 @@ int	print_c(char c)
 	return (write(1, &c, 1));
 }
 int	print_s(char* str){
+	if (!str)
+		return (print_s("(null)"));
 	int len = ft_strlen(str);
+
+
 	if (len)
 		return (write(1, str, len));
 	else
