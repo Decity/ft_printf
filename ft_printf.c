@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elie <elie@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ebayat <ebayat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:56:03 by elie              #+#    #+#             */
-/*   Updated: 2023/11/21 13:19:25 by elie             ###   ########.fr       */
+/*   Updated: 2023/11/28 13:48:06 by ebayat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	ft_printf(const char *printf_str, ...)
 	{
 		if (*printf_str == '%'){	// Check for %, if found, parse the conversion // TODO check for invalid input
 			printf_str++;
+			if (*printf_str == '\0')
+				return (-1);
 			character_counter += parse_conversion(*printf_str, args);
 		} else {
 			character_counter += write(1, printf_str, 1);

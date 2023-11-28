@@ -14,7 +14,12 @@ int main() {
     unsigned int u_num = UINT_MAX;
     count1 = ft_printf("FT_printf: %c %s %i %u %s |\n", c, string, num, u_num, null_string);
     count2 = printf("OG_printf: %c %s %i %u %s |\n", c, string, num, u_num, null_string);
-    printf("FT: %i\nOG: %i\n\n", count1, count2);
+    printf("\nFT: %i\nOG: %i\n\n", count1, count2);
+
+
+    count1 = ft_printf("FT_printf: %\0 %c %s %i %u %s |\n", c, string, num, u_num, null_string);
+    count2 = printf("OG_printf: %\0 %c %s %i %u %s |\n", c, string, num, u_num, null_string);
+    printf("\nFT: %i\nOG: %i\n\n", count1, count2);
 
     // Test 3: hexadecimal and pointer
     void* ptr = malloc(sizeof(int));
